@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <h2>Single Article</h2>
-    <h3><%= article.title %></h3>
+    <h1><%= article.title %></h1>
     <p><%= article.description %></p>
     <h5>Author: <%= article.author %></h5>
     <p>
-        Tags: <%= article.tags %>
+        Tags: 
+        <% article.tags.forEach( tag => { %>
+            <span><%= tag %></span>
+        <% }) %>
     </p>
-    <p>Likes: <%= article.likes%></p>
-    <a href="/articles/<%= article.id %>/like">
+    <h4>Likes: <%= article.likes ? article.likes : 0 %></h4>
+    <a href="/articles/<%= article.id %>/likes">
         <button>Like</button>
     </a>
     <a href="/articles/<%= article.id %>/edit">

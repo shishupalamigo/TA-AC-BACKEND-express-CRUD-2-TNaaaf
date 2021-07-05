@@ -93,4 +93,8 @@ button {
   padding: .25rem .5rem;
   margin: 1rem;
 }
+span {
+  border: 1px solid gray;
+  padding: .35rem;
+}
 

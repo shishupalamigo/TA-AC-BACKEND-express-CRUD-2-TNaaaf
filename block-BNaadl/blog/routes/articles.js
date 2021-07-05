@@ -16,6 +16,7 @@ router.get('/new', (req, res) => {
 });
 
 router.post('/', (req, res, next) => {
+    req.body.tags = req.body.tags.trim().split(' ');
     Article.create(req.body,  (err, createdArticle) => {
         if(err) return next(err);
         res.redirect('/articles');
@@ -36,18 +37,19 @@ router.get('/:id/edit', (req, res, next) => {
         res.render('editArticle', { article });
     });
 });
-router.get('/:id/like', (req, res, next) => {
+// Increment Likes
+router.get('/:id/likes', (req, res, next) => {
     let id = req.params.id;
 
-    Article.findByIdAndUpdate(id, (err, article) =>  {
+    Article.findByIdAndUpdate(id, {$inc: {likes: 1}}, (err, article) =>  {
         if(err) return next(err);
-        article.likes += 1;
-        res.render('singleArticle', { article });
+        res.redirect('/articles/' + id);
     });
 });
 
 router.post('/:id', (req, res, next) => {
     let id = req.params.id;
+    req.body.tags = req.body.tags.trim().split(' ');
     Article.findByIdAndUpdate(id, req.body, (err, updatedArticle) => {
         if(err) return next(err);
         res.redirect('/articles');
