@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Article </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <h2>Single Article</h2>
+    <h3><%= article.title %></h3>
+    <p><%= article.description %></p>
+    <h5>Author: <%= article.author %></h5>
+    <p>
+        Tags: <%= article.tags %>
+    </p>
+    <p>Likes: <%= article.likes%></p>
+    <a href="/articles/<%= article.id %>/like">
+        <button>Like</button>
+    </a>
+    <a href="/articles/<%= article.id %>/edit">
+        <button>Edit Article</button>
+    </a>
+    <a href="/articles/<%= article.id %>/delete">
+        <button>Delete Article</button>
+    </a>
+    <a href="/articles">
+        <button>Home</button>    
+    </a>
+</body>
+</html>
