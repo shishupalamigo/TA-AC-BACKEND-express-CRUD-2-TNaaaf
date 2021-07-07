@@ -4,6 +4,25 @@ const Comment = require('../models/comments');
 
 const router = express.Router();
 
+// Increment Likes
+router.get('/:id/like', (req, res, next) => {
+    let id = req.params.id;
+
+    Comment.findByIdAndUpdate(id, {$inc: {likes: 1}}, (err, comment) =>  {
+        if(err) return next(err);
+        res.redirect('/articles/' + comment.articleId);
+    });
+});
+
+// Likes Decrement 
+router.get('/:id/dislike', (req, res, next) => {
+    let id = req.params.id;
+
+    Comment.findByIdAndUpdate(id, {$inc: {likes: -1}}, (err, comment) =>  {
+        if(err) return next(err);
+        res.redirect('/articles/' + comment.articleId);
+    });
+});
 
 router.get('/:id/edit', (req, res, next) => {
     let id = req.params.id;
