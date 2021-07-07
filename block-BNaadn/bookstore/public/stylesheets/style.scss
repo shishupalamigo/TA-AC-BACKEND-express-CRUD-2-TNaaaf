@@ -1,0 +1,119 @@
+html {
+  font-size: 18px;
+}
+body{
+
+}
+a {
+  text-decoration: none;
+  color: black;
+  // display: inline-block;
+}
+.flex {
+  display: flex;
+}
+.jsb {
+  justify-content: space-between;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.btn {
+  padding: 1rem;
+  border-radius: 7px;
+}
+$pri: rgb(3, 2, 43);
+$sec: rgb(4, 51, 63);
+.btn-pri {
+  background-color: $pri;
+  color: white;
+}
+.btn-sec {
+  background-color: $sec;
+  color: white;
+}
+.sec-padding {
+  padding: 3rem 0;
+}
+//header
+.align-center {
+  align-items: center;
+  .btn {
+    margin-left: .5rem;
+  }
+}
+
+header {
+  background-color: rgb(1, 59, 248);
+  align-items: center;
+  padding: 2rem 0;
+  strong {
+    font-size: 3rem;
+    font-weight: 900;
+    color: $sec;
+  }
+}
+
+//hero-Sec
+
+.hero-Sec {
+  text-align: center;
+  margin: 3rem 0;
+  h1 {
+    font-size: 3rem;
+    color: gray;
+  }
+}
+
+//newBook-sec
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 1rem ;
+  margin-bottom: 1rem;
+  &::placeholder {
+    padding-left: 1rem;
+  }
+}
+.newBook-sec {
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    border-radius: 7px;
+    padding: 1rem;
+  }
+}
+
+//bookList-div
+
+.bookList-div {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid gray;
+  .book-div {
+    border: 1px solid gray;
+    padding-left: 1rem;
+    margin: 0.5rem 0;
+
+    h2 {
+      font-size: 2rem;
+      color: $pri;
+      text-decoration: underline;
+    }
+  }
+}
+//bookDetails-div
+.bookDetails-div {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid gray;
+  img {
+    width: 8rem;
+  }
+}
+
